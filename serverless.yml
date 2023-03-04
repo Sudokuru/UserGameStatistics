@@ -1,4 +1,4 @@
-service: UserActiveGames
+service: UserGameStatistics
 provider:
   name: aws
   runtime: nodejs18.x
