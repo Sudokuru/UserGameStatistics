@@ -1,4 +1,4 @@
-# [Typedoc Documentation Website](https://sudokuru.github.io/UserActiveGames/)<br>
+# [Typedoc Documentation Website](https://sudokuru.github.io/UserGameStatistics/)<br>
 
 
 # Developer Setup

@@ -19,14 +19,14 @@ const checkJwt = auth({
 });
 
 const { validationErrorHandler } = require('../validationAndSanitation/errorValidation');
-const userActiveGamesController = require ('../controllers/userActiveGames.controller');
+const userGameStatisticsController = require ('../controllers/userGameStatistics.controller');
 
-const { validateUserActiveGamesBodyPOST, validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH } = require("../validationAndSanitation/userActiveGames.validationAndSanitation");
+const { validateUserGameStatisticsBodyPOST, validateUserGameStatisticsParameters, validateUserGameStatisticsPATCH } = require("../validationAndSanitation/userGameStatistics.validationAndSanitation");
 
-routes.post("/user/activeGames", checkJwt, validateUserActiveGamesBodyPOST,  validationErrorHandler, userActiveGamesController.create);
-routes.get("/user/activeGames", checkJwt, validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.search);
-routes.patch("/user/activeGames", checkJwt, validateUserActiveGamesParameters, validateUserActivePuzzlesBodyPATCH, validationErrorHandler, userActiveGamesController.update);
-routes.delete("/user/activeGames", checkJwt, validateUserActiveGamesParameters, validationErrorHandler, userActiveGamesController.remove);
+routes.post("/user/gameStatistics", checkJwt, validateUserGameStatisticsBodyPOST,  validationErrorHandler, userGameStatisticsController.create);
+routes.get("/user/gameStatistics", checkJwt, validateUserGameStatisticsParameters, validationErrorHandler, userGameStatisticsController.search);
+routes.patch("/user/gameStatistics", checkJwt, validateUserGameStatisticsParameters, validateUserGameStatisticsPATCH, validationErrorHandler, userGameStatisticsController.update);
+routes.delete("/user/gameStatistics", checkJwt, validateUserGameStatisticsParameters, validationErrorHandler, userGameStatisticsController.remove);
 
 export = routes;
 

@@ -47,16 +47,31 @@ interface moves {
 }
 
 /**
- * Below are the interfaces for the {@link userActiveGames} Mongo schemas
+ * Below are the interfaces for the {@link userGameStatisticss} Mongo schemas
  * //todo make casing of types consistant
  */
 
-export interface userActiveGames {
+export interface userGameStatisticss {
     userID: string,
-    puzzle: string,
-    currentTime: number,
-    moves: moves[],
+    dateRange: string,
+    gamesPlayed: [{
+        puzzle: string,
+        moves: moves[],
+        numTimesPlayed: number,
+        initialSolveTime: number,
+        fastestSolveTime: number,
+        averageMoveTime: number,
+        numHintsAskedFor: number,
+        numWrongCellsPlayed: number,
+        numCorrectCellsPlayed: number,
+        numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
+    }],
+    averageSolveTime: number,
+    fastestSolveTime: number,
+    averageMoveTime: number,
     numHintsAskedFor: number,
     numWrongCellsPlayed: number,
+    numGamesPlayed: number,
+    numGamedFailed: number,
     numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
 }
