@@ -57,6 +57,7 @@ export interface userGameStatisticss {
     gamesPlayed: [{
         puzzle: string,
         moves: moves[],
+        score: number,
         numTimesPlayed: number,
         initialSolveTime: number,
         fastestSolveTime: number,
@@ -66,6 +67,8 @@ export interface userGameStatisticss {
         numCorrectCellsPlayed: number,
         numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
     }],
+    score: number
+    totalSolveTime: number,
     averageSolveTime: number,
     fastestSolveTime: number,
     averageMoveTime: number,

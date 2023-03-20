@@ -28,9 +28,8 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
             puzzleCurrentState: { type: String, required: true, unique: false },
             puzzleCurrentNotesState: { type: String, required: true, unique: false }
         }],
-        numTimesPlayed: { type: Number, required: true, default: 1 },
-        initialSolveTime: { type: Number, required: true },
-        fastestSolveTime: { type: Number, required: true },
+        score: { type: Number, required: true },
+        solveTime: { type: Number, required: true },
         averageMoveTime: { type: Number, required: true },
         numHintsAskedFor: { type: Number, required: true },
         numWrongCellsPlayed: { type: Number, required: true },
@@ -59,12 +58,13 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
             SINGLES_CHAINING: { type: Number, required: false }
         }
     }],
+    score: { type: Number, required: true },
     averageSolveTime: { type: Number, required: true },
     fastestSolveTime: { type: Number, required: true },
+    totalSolveTime: { type: Number, required: true },
     numHintsAskedFor: { type: Number, required: true },
     numWrongCellsPlayed: { type: Number, required: true },
-    numGamesPlayed: { type: Number, required: true, defualt: 1 },
-    numGamedFailed: { type: Number, required: true },
+    numGamesPlayed: { type: Number, required: true, default: 1 },
     numWrongCellsPlayedPerStrategy: {
         NAKED_SINGLE: { type: Number, required: false },
         HIDDEN_SINGLE: { type: Number, required: false },
