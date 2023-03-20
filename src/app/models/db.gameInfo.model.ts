@@ -59,6 +59,7 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
         }
     }],
     score: { type: Number, required: true },
+    strategiesLearned: [{ type: String, required: true }],
     averageSolveTime: { type: Number, required: true },
     fastestSolveTime: { type: Number, required: true },
     totalSolveTime: { type: Number, required: true },

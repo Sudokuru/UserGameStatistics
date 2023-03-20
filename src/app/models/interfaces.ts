@@ -67,7 +67,8 @@ export interface userGameStatisticss {
         numCorrectCellsPlayed: number,
         numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
     }],
-    score: number
+    score: number,
+    strategiesLearned: string[],
     totalSolveTime: number,
     averageSolveTime: number,
     fastestSolveTime: number,
