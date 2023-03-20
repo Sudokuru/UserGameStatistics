@@ -20,7 +20,7 @@ mongoose.set({ debug: true, autoCreate: true})
  * User's total stats can be stored in a separate object or retrieved as needed.
  */
 const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
-    userID: { type: String, required: true, unique: true },
+    userID: { type: String, required: true },
     dateRange: { type: String, required: true }, // we will be storing users stats in batches of months.
     gamesPlayed: [{
         puzzle: { type: String, required: true },
