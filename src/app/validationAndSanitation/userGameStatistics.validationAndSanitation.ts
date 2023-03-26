@@ -95,20 +95,20 @@ exports.validateUserGameStatisticsBodyPOST = [
  * //todo add more validation and sanitization
  */
 exports.validateUserGameStatisticsParameters = [
-    query('userID', 'userID did not match correct format').isString().isLength({ min: 1 }),
-    query('dateRange', 'calendar date is not a date').isDate({ strictMode: true, format: "YYYY-MM-DD" }),
+    query('userID', 'userID did not match correct format').optional().isString().isLength({ min: 1 }),
+    query('dateRange', 'calendar date is not a date').optional().isDate({ strictMode: true, format: "YYYY-MM-DD" }),
 
-    query('score', 'score is not an integer').isInt(),
+    query('score', 'score is not an integer').optional().isInt(),
     query('strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
         ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
             "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
-    query('averageSolveTime', 'average solve time is not an integer').isInt(),
-    query('fastestSolveTime', 'fastest solve time is not an integer').isInt(),
-    query('totalSolveTime', 'total solve time is not an integer').isInt(),
-    query('numHintsAskedFor', 'numHintsAskedFor is not an integer').isInt(),
-    query('numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').isInt(),
+    query('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
+    query('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
+    query('totalSolveTime', 'total solve time is not an integer').optional().isInt(),
+    query('numHintsAskedFor', 'numHintsAskedFor is not an integer').optional().isInt(),
+    query('numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').optional().isInt(),
 
     query('numWrongCellsPlayedPerStrategy.NAKED_SINGLE', 'numWrongCellsPlayed for NAKED_SINGLE is not an integer').optional().isInt(),
     query('numWrongCellsPlayedPerStrategy.HIDDEN_SINGLE', 'numWrongCellsPlayed for HIDDEN_SINGLE is not an integer').optional().isInt(),
@@ -142,17 +142,17 @@ exports.validateUserGameStatisticsParameters = [
  * We also leave out the userID and puzzle fields because we do not want to replace those during a PATCH operation
  */
 exports.validateUserGameStatisticsPATCH = [
-    body('score', 'score is not an integer').isInt(),
+    body('score', 'score is not an integer').optional().isInt(),
     body('strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
         ["NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
             "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
             "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
-    body('averageSolveTime', 'average solve time is not an integer').isInt(),
-    body('fastestSolveTime', 'fastest solve time is not an integer').isInt(),
-    body('totalSolveTime', 'total solve time is not an integer').isInt(),
-    body('numHintsAskedFor', 'numHintsAskedFor is not an integer').isInt(),
-    body('numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').isInt(),
+    body('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
+    body('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
+    body('totalSolveTime', 'total solve time is not an integer').optional().isInt(),
+    body('numHintsAskedFor', 'numHintsAskedFor is not an integer').optional().isInt(),
+    body('numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').optional().isInt(),
 
     body('numWrongCellsPlayedPerStrategy.NAKED_SINGLE', 'numWrongCellsPlayed for NAKED_SINGLE is not an integer').optional().isInt(),
     body('numWrongCellsPlayedPerStrategy.HIDDEN_SINGLE', 'numWrongCellsPlayed for HIDDEN_SINGLE is not an integer').optional().isInt(),
