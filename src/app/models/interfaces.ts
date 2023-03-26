@@ -62,10 +62,9 @@ export interface userGameStatisticss {
         initialSolveTime: number,
         fastestSolveTime: number,
         averageMoveTime: number,
-        numHintsAskedFor: number,
+        numHintsUsed: number,
         numWrongCellsPlayed: number,
-        numCorrectCellsPlayed: number,
-        numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
+        numHintsUsedPerStrategy: numWrongCellsPlayedPerStrategy
     }],
     score: number,
     strategiesLearned: string[],
@@ -73,9 +72,9 @@ export interface userGameStatisticss {
     averageSolveTime: number,
     fastestSolveTime: number,
     averageMoveTime: number,
-    numHintsAskedFor: number,
+    numHintsUsed: number,
     numWrongCellsPlayed: number,
     numGamesPlayed: number,
     numGamedFailed: number,
-    numWrongCellsPlayedPerStrategy: numWrongCellsPlayedPerStrategy
+    numHintsUsedPerStrategy: numWrongCellsPlayedPerStrategy
 }
