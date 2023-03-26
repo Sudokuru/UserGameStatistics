@@ -30,7 +30,6 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
         }],
         score: { type: Number, required: true },
         solveTime: { type: Number, required: true },
-        averageMoveTime: { type: Number, required: true },
         numHintsAskedFor: { type: Number, required: true },
         numWrongCellsPlayed: { type: Number, required: true },
         numWrongCellsPlayedPerStrategy: {
@@ -65,7 +64,7 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
     totalSolveTime: { type: Number, required: true },
     numHintsAskedFor: { type: Number, required: true },
     numWrongCellsPlayed: { type: Number, required: true },
-    numGamesPlayed: { type: Number, required: true, default: 1 },
+    numGamesPlayed: { type: Number, required: true },
     numWrongCellsPlayedPerStrategy: {
         NAKED_SINGLE: { type: Number, required: false },
         HIDDEN_SINGLE: { type: Number, required: false },
