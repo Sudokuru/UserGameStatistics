@@ -23,16 +23,15 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
     userID: { type: String, required: true },
     dateRange: { type: String, required: true }, // we will be storing users stats in batches of months.
     gamesPlayed: [{
-        puzzle: { type: String, required: true },
+        puzzle: { type: String, required: false },
         moves: [{
             puzzleCurrentState: { type: String, required: true, unique: false },
             puzzleCurrentNotesState: { type: String, required: true, unique: false }
         }],
-        score: { type: Number, required: true },
-        solveTime: { type: Number, required: true },
-        averageMoveTime: { type: Number, required: true },
-        numHintsAskedFor: { type: Number, required: true },
-        numWrongCellsPlayed: { type: Number, required: true },
+        score: { type: Number, required: false },
+        solveTime: { type: Number, required: false },
+        numHintsAskedFor: { type: Number, required: false },
+        numWrongCellsPlayed: { type: Number, required: false },
         numWrongCellsPlayedPerStrategy: {
             NAKED_SINGLE: { type: Number, required: false },
             HIDDEN_SINGLE: { type: Number, required: false },
@@ -65,7 +64,7 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
     totalSolveTime: { type: Number, required: true },
     numHintsAskedFor: { type: Number, required: true },
     numWrongCellsPlayed: { type: Number, required: true },
-    numGamesPlayed: { type: Number, required: true, default: 1 },
+    numGamesPlayed: { type: Number, required: true },
     numWrongCellsPlayedPerStrategy: {
         NAKED_SINGLE: { type: Number, required: false },
         HIDDEN_SINGLE: { type: Number, required: false },

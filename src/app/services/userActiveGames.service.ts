@@ -71,19 +71,16 @@ function filterInputQuery(userActiveGames){
         filterValues.push({});
     }
     else{
-        // This is for finding a document that contains a move array value with the two provided puzzleCurrentState and puzzleCurrentNotesState values
-        if (userActiveGames.moves !== undefined && 'puzzleCurrentState' in userActiveGames.moves && 'puzzleCurrentNotesState' in userActiveGames.moves){
-            filterValues.push({ moves: { $elemMatch: { puzzleCurrentState: userActiveGames.moves.puzzleCurrentState, puzzleCurrentNotesState: userActiveGames.moves.puzzleCurrentNotesState } } });
-            delete userActiveGames.moves;
+        // we want to find all puzzles that contain the strategies in the strategyArray
+        if ('strategiesLearned' in userActiveGames){
+            filterValues.push({ 'strategiesLearned': { $in : userActiveGames['strategiesLearned'] } });
+            delete userActiveGames.strategies;
         }
 
-        // The dot notation is important to be able to retrieve all activeUserGames with a given numWrongCellsPlayedPerStrategy value
-        // Because we don't want to search for an exact mach of that object. We want to do an OR type operation for numWrongCellsPlayedPerStrategy
-        // not an AND type operation
-        // The reason we cannot use dot notation in the request is because express-validator converts it away from dot notation into JSON
-        // I cannot figure out a way to disable that functionality provided by express-validator
+        // since we have removed strategiesLearned, if the object is not empty we push remaining
+        // parameters to the query
         if (Object.keys(userActiveGames).length !== 0){
-            filterValues.push(dot.dot(userActiveGames));
+            filterValues.push(userActiveGames);
         }
     }
 
