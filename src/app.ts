@@ -22,7 +22,6 @@ process.argv.forEach(function(val, index, array) {
     }
 });
 
-// adding a comment
 app.use(expressApp.urlencoded({ extended: true }));
 app.use(expressApp.json());
 
