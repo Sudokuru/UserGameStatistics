@@ -64,6 +64,7 @@ exports.validateUserGameStatisticsBodyPOST = [
     body('*.totalSolveTime', 'total solve time is not an integer').isInt(),
     body('*.numHintsAskedFor', 'numHintsAskedFor is not an integer').isInt(),
     body('*.numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').isInt(),
+    body('*.numGamesPlayed', 'numGamesPlayed is not an integer').isInt(),
 
     body('*.numWrongCellsPlayedPerStrategy.NAKED_SINGLE', 'numWrongCellsPlayed for NAKED_SINGLE is not an integer').optional().isInt(),
     body('*.numWrongCellsPlayedPerStrategy.HIDDEN_SINGLE', 'numWrongCellsPlayed for HIDDEN_SINGLE is not an integer').optional().isInt(),
@@ -109,6 +110,7 @@ exports.validateUserGameStatisticsParameters = [
     query('totalSolveTime', 'total solve time is not an integer').optional().isInt(),
     query('numHintsAskedFor', 'numHintsAskedFor is not an integer').optional().isInt(),
     query('numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').optional().isInt(),
+    query('*.numGamesPlayed', 'numGamesPlayed is not an integer').optional().isInt(),
 
     query('numWrongCellsPlayedPerStrategy.NAKED_SINGLE', 'numWrongCellsPlayed for NAKED_SINGLE is not an integer').optional().isInt(),
     query('numWrongCellsPlayedPerStrategy.HIDDEN_SINGLE', 'numWrongCellsPlayed for HIDDEN_SINGLE is not an integer').optional().isInt(),
@@ -153,6 +155,7 @@ exports.validateUserGameStatisticsPATCH = [
     body('totalSolveTime', 'total solve time is not an integer').optional().isInt(),
     body('numHintsAskedFor', 'numHintsAskedFor is not an integer').optional().isInt(),
     body('numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').optional().isInt(),
+    body('*.numGamesPlayed', 'numGamesPlayed is not an integer').optional().isInt(),
 
     body('numWrongCellsPlayedPerStrategy.NAKED_SINGLE', 'numWrongCellsPlayed for NAKED_SINGLE is not an integer').optional().isInt(),
     body('numWrongCellsPlayedPerStrategy.HIDDEN_SINGLE', 'numWrongCellsPlayed for HIDDEN_SINGLE is not an integer').optional().isInt(),
