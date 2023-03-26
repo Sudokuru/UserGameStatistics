@@ -24,7 +24,6 @@ async function createUserGameStatistics(req, res, next) {
     const allData = Object.values(matchedData(req, { locations: ['body'] }));
     allData.pop();
 
-    console.log(req.body, "/", allData);
     try {
         // override successful completion code of 200 to 201 for successful object creation
         res.status(201).json(await userActiveGamesService.createUserActiveGames(allData));
