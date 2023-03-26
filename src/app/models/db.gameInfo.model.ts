@@ -30,9 +30,9 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
         }],
         score: { type: Number, required: false },
         solveTime: { type: Number, required: false },
-        numHintsAskedFor: { type: Number, required: false },
+        numHintsUsed: { type: Number, required: false },
         numWrongCellsPlayed: { type: Number, required: false },
-        numWrongCellsPlayedPerStrategy: {
+        numHintsUsedPerStrategy: {
             NAKED_SINGLE: { type: Number, required: false },
             HIDDEN_SINGLE: { type: Number, required: false },
             NAKED_PAIR: { type: Number, required: false },
@@ -62,10 +62,10 @@ const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
     averageSolveTime: { type: Number, required: true },
     fastestSolveTime: { type: Number, required: true },
     totalSolveTime: { type: Number, required: true },
-    numHintsAskedFor: { type: Number, required: true },
+    numHintsUsed: { type: Number, required: true },
     numWrongCellsPlayed: { type: Number, required: true },
     numGamesPlayed: { type: Number, required: true },
-    numWrongCellsPlayedPerStrategy: {
+    numHintsUsedPerStrategy: {
         NAKED_SINGLE: { type: Number, required: false },
         HIDDEN_SINGLE: { type: Number, required: false },
         NAKED_PAIR: { type: Number, required: false },
