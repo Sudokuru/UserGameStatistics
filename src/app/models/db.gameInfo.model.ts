@@ -22,43 +22,8 @@ mongoose.set({ debug: true, autoCreate: true})
 const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
     userID: { type: String, required: true },
     dateRange: { type: String, required: true }, // we will be storing users stats in batches of months.
-    gamesPlayed: [{
-        puzzle: { type: String, required: false },
-        moves: [{
-            puzzleCurrentState: { type: String, required: true, unique: false },
-            puzzleCurrentNotesState: { type: String, required: true, unique: false }
-        }],
-        score: { type: Number, required: false },
-        solveTime: { type: Number, required: false },
-        numHintsUsed: { type: Number, required: false },
-        numWrongCellsPlayed: { type: Number, required: false },
-        numHintsUsedPerStrategy: {
-            NAKED_SINGLE: { type: Number, required: false },
-            HIDDEN_SINGLE: { type: Number, required: false },
-            NAKED_PAIR: { type: Number, required: false },
-            NAKED_TRIPLET: { type: Number, required: false },
-            NAKED_QUADRUPLET: { type: Number, required: false },
-            NAKED_QUINTUPLET: { type: Number, required: false },
-            NAKED_SEXTUPLET: { type: Number, required: false },
-            NAKED_SEPTUPLET: { type: Number, required: false },
-            NAKED_OCTUPLET: { type: Number, required: false },
-            HIDDEN_PAIR: { type: Number, required: false },
-            HIDDEN_TRIPLET: { type: Number, required: false },
-            HIDDEN_QUADRUPLET: { type: Number, required: false },
-            HIDDEN_QUINTUPLET: { type: Number, required: false },
-            HIDDEN_SEXTUPLET: { type: Number, required: false },
-            HIDDEN_SEPTUPLET: { type: Number, required: false },
-            HIDDEN_OCTUPLET: { type: Number, required: false },
-            POINTING_PAIR: { type: Number, required: false },
-            POINTING_TRIPLET: { type: Number, required: false },
-            BOX_LINE_REDUCTION: { type: Number, required: false },
-            X_WING: { type: Number, required: false },
-            SWORDFISH: { type: Number, required: false },
-            SINGLES_CHAINING: { type: Number, required: false }
-        }
-    }],
     score: { type: Number, required: true },
-    strategiesLearned: [{ type: String, required: true }],
+    strategiesLearned: [{ type: String, required: false }],
     averageSolveTime: { type: Number, required: true },
     fastestSolveTime: { type: Number, required: true },
     totalSolveTime: { type: Number, required: true },

@@ -71,7 +71,7 @@ function filterInputQuery(userActiveGames){
         filterValues.push({});
     }
     else{
-        // we want to find all puzzles that contain the strategies in the strategyArray
+        // we want to find all users' statistics that have learned the listed strategies
         if ('strategiesLearned' in userActiveGames){
             filterValues.push({ 'strategiesLearned': { $in : userActiveGames['strategiesLearned'] } });
             delete userActiveGames.strategies;

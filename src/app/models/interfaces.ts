@@ -54,18 +54,6 @@ interface moves {
 export interface userGameStatisticss {
     userID: string,
     dateRange: string,
-    gamesPlayed: [{
-        puzzle: string,
-        moves: moves[],
-        score: number,
-        numTimesPlayed: number,
-        initialSolveTime: number,
-        fastestSolveTime: number,
-        averageMoveTime: number,
-        numHintsUsed: number,
-        numWrongCellsPlayed: number,
-        numHintsUsedPerStrategy: numWrongCellsPlayedPerStrategy
-    }],
     score: number,
     strategiesLearned: string[],
     totalSolveTime: number,
