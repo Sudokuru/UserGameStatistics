@@ -27,6 +27,10 @@ app.use(expressApp.json());
 
 const baseRoute: string = "/api/v1";
 
+app.get(baseRoute, function (req, res) {
+    res.send("UserGameStatistics");
+});
+
 const globalRouter = require('./app/routes/routes');
 app.use(baseRoute, globalRouter);
 
