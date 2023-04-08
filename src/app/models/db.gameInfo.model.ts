@@ -21,7 +21,7 @@ mongoose.set({ debug: true, autoCreate: true})
  */
 const UserGameStatisticsSchema = new Schema<userGameStatisticss>({
     userID: { type: String, required: true },
-    dateRange: { type: String, required: true }, // we will be storing users stats in batches of months.
+    dateRange: { type: Date, required: true }, // we will be storing users stats in batches of days.
     score: { type: Number, required: true, default: 0 },
     strategiesLearned: [{ type: String, required: false }],
     averageSolveTime: { type: Number, required: true, default: 0 },
