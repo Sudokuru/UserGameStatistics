@@ -53,7 +53,7 @@ interface moves {
 
 export interface userGameStatisticss {
     userID: string,
-    dateRange: string,
+    dateRange: Date,
     score: number,
     strategiesLearned: string[],
     totalSolveTime: number,
