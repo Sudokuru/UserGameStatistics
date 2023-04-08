@@ -18,7 +18,7 @@ import {body, query} from "express-validator";
 exports.validateUserGameStatisticsBodyPOST = [
     body().isArray().withMessage('body is not an array'),
     body('*.userID', 'userID did not match correct format').isString().isLength({ min: 1 }),
-    body('*.dateRange', 'calendar date is not a date').isDate({ strictMode: true, format: "YYYY-MM" }),
+    body('*.dateRange', 'calendar date is not a date').isDate({ strictMode: true, format: "YYYY-MM-DD" }),
 
     body('*.score', 'score is not an integer').optional().isInt(),
     body('*.strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
