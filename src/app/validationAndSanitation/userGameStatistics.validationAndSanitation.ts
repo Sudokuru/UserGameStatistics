@@ -22,9 +22,8 @@ exports.validateUserGameStatisticsBodyPOST = [
 
     body('*.score', 'score is not an integer').optional().isInt(),
     body('*.strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
-        ["AMEND_NOTES", "SIMPLIFY_NOTES", "NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
+        ["AMEND_NOTES", "NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_SET",
+            "HIDDEN_SET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
     body('*.averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     body('*.fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
@@ -68,9 +67,8 @@ exports.validateUserGameStatisticsParameters = [
 
     query('score', 'score is not an integer').optional().isInt(),
     query('strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
-        ["AMEND_NOTES", "SIMPLIFY_NOTES", "NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
+        ["AMEND_NOTES", "NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_SET",
+            "HIDDEN_SET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
     query('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     query('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
@@ -113,9 +111,8 @@ exports.validateUserGameStatisticsParameters = [
 exports.validateUserGameStatisticsPATCH = [
     body('score', 'score is not an integer').optional().isInt(),
     body('strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
-        ["AMEND_NOTES", "SIMPLIFY_NOTES", "NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_PAIR", "NAKED_TRIPLET", "NAKED_QUADRUPLET", "NAKED_QUINTUPLET",
-            "NAKED_SEXTUPLET", "NAKED_SEPTUPLET", "NAKED_OCTUPLET", "HIDDEN_PAIR", "HIDDEN_TRIPLET", "HIDDEN_QUADRUPLET",
-            "HIDDEN_QUINTUPLET", "HIDDEN_SEXTUPLET", "HIDDEN_SEPTUPLET", "HIDDEN_OCTUPLET", "POINTING_PAIR", "POINTING_TRIPLET",
+        ["AMEND_NOTES", "NAKED_SINGLE", "HIDDEN_SINGLE", "NAKED_SET",
+            "HIDDEN_SET", "POINTING_PAIR", "POINTING_TRIPLET",
             "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
     body('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     body('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
