@@ -21,10 +21,7 @@ exports.validateUserGameStatisticsBodyPOST = [
     body('*.dateRange', 'calendar date is not a date').isDate({ strictMode: true, format: "YYYY-MM-DD" }),
 
     body('*.score', 'score is not an integer').optional().isInt(),
-    body('*.strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
-        ["SUDOKU_101", "AMEND_NOTES", "NAKED_SINGLE", "SIMPLIFY_NOTES", "HIDDEN_SINGLE", "NAKED_SET",
-            "HIDDEN_SET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    body('*.strategiesLearned', 'Strategies learned array is not valid').optional().isArray(),
     body('*.averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     body('*.fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     body('*.totalSolveTime', 'total solve time is not an integer').optional().isInt(),
@@ -66,10 +63,7 @@ exports.validateUserGameStatisticsParameters = [
     query('dateRange', 'calendar date is not a date').optional().isDate({ strictMode: true, format: "YYYY-MM-DD" }),
 
     query('score', 'score is not an integer').optional().isInt(),
-    query('strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
-        ["SUDOKU_101", "AMEND_NOTES", "NAKED_SINGLE", "SIMPLIFY_NOTES", "HIDDEN_SINGLE", "NAKED_SET",
-            "HIDDEN_SET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    query('strategiesLearned', 'Strategies learned array is not valid').optional().isArray(),
     query('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     query('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     query('totalSolveTime', 'total solve time is not an integer').optional().isInt(),
@@ -110,10 +104,7 @@ exports.validateUserGameStatisticsParameters = [
  */
 exports.validateUserGameStatisticsPATCH = [
     body('score', 'score is not an integer').optional().isInt(),
-    body('strategiesLearned', 'Strategies learned array is not valid').optional().isArray().isIn(
-        ["SUDOKU_101", "AMEND_NOTES", "NAKED_SINGLE", "SIMPLIFY_NOTES", "HIDDEN_SINGLE", "NAKED_SET",
-            "HIDDEN_SET", "POINTING_PAIR", "POINTING_TRIPLET",
-            "BOX_LINE_REDUCTION", "X_WING", "SWORDFISH", "SINGLES_CHAINING"]),
+    body('strategiesLearned', 'Strategies learned array is not valid').optional().isArray(),
     body('averageSolveTime', 'average solve time is not an integer').optional().isInt(),
     body('fastestSolveTime', 'fastest solve time is not an integer').optional().isInt(),
     body('totalSolveTime', 'total solve time is not an integer').optional().isInt(),
