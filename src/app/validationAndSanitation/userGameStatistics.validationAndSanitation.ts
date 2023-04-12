@@ -69,7 +69,7 @@ exports.validateUserGameStatisticsParameters = [
     query('totalSolveTime', 'total solve time is not an integer').optional().isInt(),
     query('numHintsUsed', 'numHintsAskedFor is not an integer').optional().isInt(),
     query('numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').optional().isInt(),
-    query('*.numGamesPlayed', 'numGamesPlayed is not an integer').optional().isInt(),
+    query('numGamesPlayed', 'numGamesPlayed is not an integer').optional().isInt(),
 
     query('numHintsUsedPerStrategy.NAKED_SINGLE', 'numWrongCellsPlayed for NAKED_SINGLE is not an integer').optional().isInt(),
     query('numHintsUsedPerStrategy.HIDDEN_SINGLE', 'numWrongCellsPlayed for HIDDEN_SINGLE is not an integer').optional().isInt(),
@@ -110,7 +110,7 @@ exports.validateUserGameStatisticsPATCH = [
     body('totalSolveTime', 'total solve time is not an integer').optional().isInt(),
     body('numHintsUsed', 'numHintsAskedFor is not an integer').optional().isInt(),
     body('numWrongCellsPlayed', 'numWrongCellsPlayed is not an integer').optional().isInt(),
-    body('*.numGamesPlayed', 'numGamesPlayed is not an integer').optional().isInt(),
+    body('numGamesPlayed', 'numGamesPlayed is not an integer').optional().isInt(),
 
     body('numHintsUsedPerStrategy.NAKED_SINGLE', 'numWrongCellsPlayed for NAKED_SINGLE is not an integer').optional().isInt(),
     body('numHintsUsedPerStrategy.HIDDEN_SINGLE', 'numWrongCellsPlayed for HIDDEN_SINGLE is not an integer').optional().isInt(),
